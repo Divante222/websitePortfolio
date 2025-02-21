@@ -3,14 +3,15 @@ package com.example.portfolio.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.example.portfolio.common.Coach;
 
 
 
-@RestController
+@Controller
 public class FunRestController {
 
     private Coach myCoach;
@@ -40,6 +41,7 @@ public class FunRestController {
     public FunRestController(@Qualifier("swimCoach")Coach theCoach){
                 System.out.println("In constructor: " + getClass().getSimpleName());
                 myCoach = theCoach;
+                System.out.println(myCoach);
     }
 
     // @GetMapping("/check")
@@ -54,8 +56,9 @@ public class FunRestController {
 
     // expose a "/" that returns "Hello World"
     @GetMapping("/")
-    public String sayHello(){
-        return "Hello World!";
+    public String sayHello(Model model){
+        model.addAttribute("message", "Divante Parness");
+        return "index";  // returns index.html from src/main/resources/templates
     }
 
     @GetMapping("/workout")

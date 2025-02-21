@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<header>
+
+</header>
+<body>
+    <div id="backgroundDivTag">
+        <h1 th:text="${message}">hello world</h1> <!-- Thymeleaf syntax -->
+    </div>
+
+    <div class="flex-container-horizontal">
+        <section id="IconsSection">
+            <div class="flex-container">
+                <a href="https://github.com/Divante222?tab=repositories"><img class="Icon" src="GithubIcon.jpg" alt="Coming soon"></a>
+                <a href="https://www.linkedin.com/in/divante-parness/"><img class="Icon" src="LinkedInIcon.jpg" alt="Coming soon"></a>
+            </div>
+        </section>
+
+        <section id="HeadshotSection">
+            <div class="flex-container">
+                <img id="HeadshotImage" src="divante_parness_headshot.jpg" alt="Something went wrong">
+                <div class="SectionDivider"></div>
+            </div>
+        </section>
+    </div>
+
+    <div>
+        <a id="projectLinks" href="https://github.com/Divante222/ToDoList">Task ManageMent Application</a>
+
+    </div>
+</body>
+<footer>
+
+</footer>
+</html>  
